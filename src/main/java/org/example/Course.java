@@ -1,3 +1,5 @@
+// Student name: Koichi Nakata (ID: knakata595)
+
 package org.example;
 
 public class Course {
@@ -36,6 +38,14 @@ public class Course {
         }
         students[getNumberOfStudents()] = student;
         setNumberOfStudents(getNumberOfStudents()+1);
+
+        System.out.printf("(+)%s was added into %s\n", student, getCourseName());
+    }
+
+    public void addStudentList(String[] studentList) {
+        for (int i = 0; i < studentList.length; i++) {
+            addStudent(studentList[i]);
+        }
     }
 
     public void dropStudent(String student) {
@@ -49,6 +59,8 @@ public class Course {
                 }
                 getStudents()[j] = null;
                 setNumberOfStudents(getNumberOfStudents()-1);
+
+                System.out.printf("(-)%s was dropped from %s\n", student, getCourseName());
                 break;
             }
         }
@@ -73,6 +85,29 @@ public class Course {
         String[] newArray = new String[getCapacity()];
         System.arraycopy(getStudents(), 0, newArray, 0, getStudents().length);
         students = newArray;
+    }
+
+    public void print() {
+        System.out.printf("Course name: %s\n", getCourseName());
+        System.out.printf("Instructor name: %s\n", getInstructor());
+        System.out.printf("There are %d students enrolled.\n", getNumberOfStudents());
+        if (getNumberOfStudents() != 0) {
+            System.out.println("Students list:");
+            for (int i = 0; i < getNumberOfStudents(); i++) {
+                if (i % 5 == 4 || i == getNumberOfStudents()-1) {
+                    System.out.printf("%s\n", getStudents()[i]);
+                } else {
+                    System.out.printf("%s, ", getStudents()[i]);
+                }
+            }
+        }
+    }
+
+    public void clear() {
+        for (int i = 0; i < getNumberOfStudents(); i++) {
+            getStudents()[i] = null;
+        }
+        setNumberOfStudents(0);
     }
 
 }
