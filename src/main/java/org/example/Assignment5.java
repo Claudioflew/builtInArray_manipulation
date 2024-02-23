@@ -14,7 +14,7 @@ public class Assignment5 {
         myCourse.addStudent("Fumio Kishida");
 
         String[] studentList = {"Doraemon", "Dorami-chan", "Kiteretsu", "Korosuke", "Simon's cat",
-                                "Kirby", "Snorlax", "Pikachu", "Gyarados", "Winnie the Pooh",
+                                "Kirby", "Snorlax", "Pikachu", "Raichu", "Winnie the Pooh",
                                 "Yui Matsuo", "Fumie Komaya", "Mio Kuramochi", "Moe Kodera", "Koji Narematsu"};
         myCourse.addStudentList(studentList);
 
